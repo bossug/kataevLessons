@@ -20,6 +20,7 @@ public class Main {
 
         System.out.println(isPositive(-1));
 
+        //Указание имени
         nameParam("Вася");
 
         Year(1976);
