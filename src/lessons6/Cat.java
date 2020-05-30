@@ -1,20 +1,22 @@
 package com.company;
 
-public class Cat extends Animal {
-    protected boolean sweem;
-    int jump;
-    private String nameValue = "";
-
-
-    public Cat(String name, int run, boolean sweem, int jump) {
-        this.name = name;
-        this.run = run;
-        this.sweem = sweem;
-        this.jump = jump;
+public class Cat extends Animals {
+    private final int runMaxLimit = 200;
+    private final double jumpMaxLimit = 2;
+    @Override
+    void run(int length) {
+        if ((length >= 0) && (length <= runMaxLimit)) System.out.println("run: true");
+        else System.out.println("run: false");
     }
 
-    public void catInfo() {
-        System.out.println(String.format(this.template, this.name, this.run, this.sweem, nameValue, this.jump));
-        System.out.println();
+    @Override
+    protected void sweem(int length) {
+        System.out.println("sweem: false");
+    }
+
+    @Override
+    void jump(double height) {
+        if ((height >= 0) && (height <= jumpMaxLimit)) System.out.println("jump: true");
+        else System.out.println("jump: false");
     }
 }
